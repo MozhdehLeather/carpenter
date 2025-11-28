@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handyman Aslani - Professional Home Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #222;
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .paper-card {
+            max-width: 1000px;
+            width: 100%;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #222;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #222;
+            margin-right: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+            color: #222;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: #444;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+        }
+        
+        .contact-item i {
+            font-size: 1.4rem;
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+            color: white;
+            border-radius: 50%;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #222;
+        }
+        
+        .contact-text p {
+            font-size: 1rem;
+            color: #444;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            color: #222;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #222;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .service-card {
+            padding: 25px 20px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #222;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .values {
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .value-item {
+            flex: 1;
+            min-width: 200px;
+            margin: 15px;
+            padding: 20px;
+        }
+        
+        .value-item i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .value-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .value-item p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0 10px;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            color: #222;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .social-links a:hover {
+            background: #222;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .call-to-action {
+            text-align: center;
+            margin: 40px 0;
+            padding: 25px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid #222;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: #222;
+        }
+        
+        @media (max-width: 768px) {
+            .paper-card {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 25px;
+            }
+            
+            .values-grid {
+                flex-direction: column;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .paper-card {
+                padding: 25px 20px;
+            }
+            
+            .logo {
+                font-size: 1.9rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-card">
+        <div class="header">
+            <img src="https://i.pinimg.com/736x/db/a9/55/dba95568fa4cb3301d0ef744868225ab.jpg" alt="Handyman Aslani" class="profile-img">
+            <div class="header-text">
+                <h1 class="logo">Handyman Aslani</h1>
+                <p class="tagline">Professional Home Services</p>
+                <p class="description">Your trusted partner for all home repair needs in McKinney, TX and surrounding areas.</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div class="contact-text">
+                    <h3>Phone</h3>
+                    <p>+1 (469) 657-0977</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-text">
+                    <h3>Email</h3>
+                    <p>handymanaslani@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-text">
+                    <h3>Location</h3>
+                    <p>McKinney, TX</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="call-to-action">
+            <h3>Ready to fix your home issues?</h3>
+            <p>Contact me today for a free estimate!</p>
+            <a href="tel:+14696570977" class="cta-button">Call Now</a>
+        </div>
+        
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>General Repairs</h3>
+                <p>Fixing all kinds of household issues and maintenance needs with precision and care.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-couch"></i>
+                <h3>Furniture Assembly</h3>
+                <p>Professional assembly of all types of furniture, from simple chairs to complex modular systems.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-paint-roller"></i>
+                <h3>Painting</h3>
+                <p>Interior and exterior painting with quality finishes that transform your space.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-hammer"></i>
+                <h3>Carpentry</h3>
+                <p>Custom woodwork, repairs, and installations with attention to detail and craftsmanship.</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-faucet"></i>
+                <h3>Plumbing</h3>
+                <p>Fix leaks, install fixtures, and handle all plumbing issues efficiently and effectively.</p>
+            </div>
+        </div>
+        
+        <div class="values">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast</h3>
+                    <p>Quick response times and efficient service completion without compromising quality.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Reliable</h3>
+                    <p>Dependable service with quality workmanship guaranteed. We stand behind our work.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Affordable</h3>
+                    <p>Competitive pricing with no hidden fees. Quality service that fits your budget.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-yelp"></i></a>
+            </div>
+            <p>&copy; 2023 Handyman Aslani - Professional Home Services</p>
+            <p>McKinney, TX | +1 (469) 657-0977 | handymanaslani@gmail.com</p>
+        </footer>
+    </div>
+</body>
+</html>
